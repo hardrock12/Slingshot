@@ -9,6 +9,13 @@ public class stone extends GameObject{
 bodyType("STATIC");
  
  }
+ private player playee;
+ 
+ public void setplayer(player p){
+ playee=p;
+ 
+ }
+ 
     public void main(){
         
       if(hit("bottle"))

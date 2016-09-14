@@ -21,20 +21,16 @@ GameObject[] stones;
  public void init()
  {
  if (nstone==0){nstone=1;stone_rem=1;}
-stones =new GameObject[nstone];
+
  cx=position().x;
  cy=position().y;
  swidth=new Bdx.Display().width();
  
  sheight=new Bdx.Display().height();
- stone=stones[stone_rem-1];
- target=scene.objects.get("settarget");
+allset=-1;
+
  
- if((target=scene.add("bottle"))==null)
- {
  
- System.out.println("error");
- }
  }
  public void shot()
  { Vector3f vec=target.position();
@@ -50,18 +46,23 @@ stones =new GameObject[nstone];
  
  
  }
-  public  void setStone(int nstone)
+  public  void setStone(String kavanistr,String  stonestr,String target)
     {
-    this.nstone=nstone;
-    stone_rem=nstone;
-    
+    stone=scene.objects.get(stonestr);  
+   this.target=scene.objects.get(target);
+    allset=0;
+    }
+    private player pthis;
+    void setPlayer(Player p)
+   p
+    {
+    pthis=p;
     }
     public void main(){
+    
+    if(allset==-1){return;}
     if(kavani!=null&&kavani.up())
-    {kavani=null;
-    i=0;
-    
-    
+    {kavani=null;i=0;
     }
    
     if(Bdx.fingers.size()==2)
@@ -89,7 +90,13 @@ stones =new GameObject[nstone];
     
     shot();
        stone_rem--;
-    stone=stones[stone_rem-1];
+       if(stone_rem==0)
+       {
+       
+       
+       }
+       allset=0;
+//  stone=stones[stone_rem-1];
     }
     
     
@@ -103,6 +110,15 @@ stones =new GameObject[nstone];
          
            
     }
+    public int rem_stones()
+    {
+    
+    return stone_rem;
+    
+    }
+   
+
+
  
     
 }

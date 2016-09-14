@@ -14,10 +14,11 @@ public class BdxApp implements ApplicationListener {
 
 		Scene.instantiators = new HashMap<String, Instantiator>();
 		Scene.instantiators.put("Level1", new com.arjunsuresh.gamesling.inst.iLevel1());
-		Scene.instantiators.put("Level2", null);
+		Scene.instantiators.put("Levels", new com.arjunsuresh.gamesling.inst.iLevels());
+		Scene.instantiators.put("main", new com.arjunsuresh.gamesling.inst.imain());
 
-		Bdx.scenes.add(new Scene("Level2"));
-		Bdx.firstScene = "Level2";
+		Bdx.scenes.add(new Scene("Level1"));
+		Bdx.firstScene = "Level1";
 		
 	}
 

@@ -3,15 +3,13 @@ package com.arjunsuresh.gamesling.inst;
 import com.badlogic.gdx.utils.JsonValue;
 import com.nilunder.bdx.Instantiator;import com.nilunder.bdx.GameObject;
 import com.arjunsuresh.gamesling.*;
-public class iLevel1 extends Instantiator {
+public class imain extends Instantiator {
 
 	public GameObject newObject(JsonValue gobj){
 		String name = gobj.name;
 
-		if (gobj.get("class").asString().equals("Platform"))
-			return new com.arjunsuresh.gamesling.Platform();
-		if (gobj.get("class").asString().equals("kavani1"))
-			return new com.arjunsuresh.gamesling.kavani1();
+		if (gobj.get("class").asString().equals("Playbtn"))
+			return new com.arjunsuresh.gamesling.Playbtn();
 
 		return super.newObject(gobj);
 	}

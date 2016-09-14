@@ -3,21 +3,17 @@ package com.arjunsuresh.gamesling;
 import com.nilunder.bdx.*;
 
 
-public class stone extends GameObject{
+public class kavani1  extends kavani{
  public void init()
  {
-bodyType("STATIC");
+super.init();
+ setStone("kavani1","1stone","1target");
  
  }
- private player playee;
- 
- public void setplayer(player p){
- playee=p;
- 
- }
+
  
     public void main(){
-        
+        super.main();
       
             
          
