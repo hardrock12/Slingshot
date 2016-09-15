@@ -7,10 +7,13 @@ import javax.vecmath.*;
 
 
 
+
 public class Playbtn extends GameObject{
  public void init()
  {
-Bdx.music.get("lantern").play();
+com.badlogic.gdx.audio.Music  m=Bdx.music.get("lantern");
+m.isLooping(true);
+m.play();
  
  }
     public void main(){
@@ -23,7 +26,7 @@ Bdx.music.get("lantern").play();
         RayHit rh =f.ray();
         if(rh!=null&&rh.object==scene.objects.get("Playbtn"))
       {  
-        Bdx.sound.get("menuselect").play();
+        Bdx.sounds.get("menuselect").play();
         //((debug) scene.objects.get("debug")).text("hit play");
         Bdx.scenes.set(0,"Levels");
         

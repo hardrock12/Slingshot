@@ -6,7 +6,7 @@ import com.nilunder.bdx.*;
 public class stone extends GameObject{
  public void init()
  {
-bodyType("STATIC");
+
  
  }
  private player playee;

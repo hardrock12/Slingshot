@@ -7,7 +7,7 @@ public class player1 extends player{
  public void init()
  {
 super.init();
- setstonestring("1stone");
+ setstonestring("1bottle00","bottle1","1stone","Level1","1score_overlay");
  }
 
  

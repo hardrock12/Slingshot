@@ -25,12 +25,15 @@ public class select extends GameObject{
         Bdx.scenes.set(0,"Level1");
         
         }
-         else  if(rh.object==scene.objects.get("easy"))
+         else  if(rh.object==scene.objects.get("medium"))
       {  
        Bdx.sounds.get("menuselect").play();
-        }  else if(rh.object==scene.objects.get("easy"))
+              Bdx.scenes.set(0,"Level2");
+        }  else if(rh.object==scene.objects.get("hard"))
       {  
        Bdx.sounds.get("menuselect").play();
+       Bdx.scenes.set(0,"Level3");
+       
         }
            }
     }

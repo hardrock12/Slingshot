@@ -7,10 +7,13 @@ import javax.vecmath.*;
 
 
 
+
 public class Playbtn extends GameObject{
  public void init()
  {
-Bdx.music.get("lantern").play();
+com.badlogic.gdx.audio.Music  m=Bdx.music.get("lantern");
+m.setLooping(true);
+m.play();
  
  }
     public void main(){

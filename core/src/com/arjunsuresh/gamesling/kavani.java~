@@ -14,13 +14,13 @@ Finger stonefig;
 float swidth,sheight;
 int allset=0;
 int nstone;
-int stone_rem=0;
+int stone_rem=3;
 GameObject[] stones;
 
     int i=0;
  public void init()
  {
- if (nstone==0){nstone=1;stone_rem=1;}
+ 
 
  cx=position().x;
  cy=position().y;
@@ -36,7 +36,7 @@ allset=-1;
  { Vector3f vec=target.position();
     Vector3f vec2=stone.position();
     vec.sub(vec2);
-    Vector3f vec3=vec.mul(120);
+    Vector3f vec3=vec.mul(80);
    stone.bodyType("RIGID_BODY");
     stone.applyForce(vec3);
     allset=0;
@@ -53,8 +53,8 @@ allset=-1;
     allset=0;
     }
     private player pthis;
-    void setPlayer(Player p)
-   p
+    void setPlayer(player p)
+   
     {
     pthis=p;
     }
@@ -63,6 +63,31 @@ allset=-1;
     if(allset==-1){return;}
     if(kavani!=null&&kavani.up())
     {kavani=null;i=0;
+    
+    }
+    if(allset==3)
+    {
+//((Text)scene.objects.get("debu")).text(" "+stone.position().y);
+    if(stone.position().y>28f||stone.position().x>15f||stone.position().z>17f||stone.position().x<-15f||stone.position().z<-4f||stone.position().y<-28f||stone.velocity()==new Vector3f(0,0,0))
+    {
+    if(stone_rem==0)
+    {
+     pthis.gameover();
+     return;
+    
+    }
+    stone.velocity(new Vector3f(0,0,0));
+    
+    stone.angularVelocity(new Vector3f(0,0,0));
+    stone.bodyType("STATIC");
+     
+    allset=0;
+    }
+    else{
+    
+    return;
+    
+    }
     }
    
     if(Bdx.fingers.size()==2)
@@ -71,11 +96,11 @@ allset=-1;
     Finger figs=Bdx.fingers.get(1);
     float newx=(cx+(figk.position().x-swidth/2-15)/100);
     float newy=cy+(figk.position().y/110);
-    float snewy=figs.position().y/70;
+    float snewy=newy-4.5f;
     float snewz=(figs.position().y)/110;
     float snewx=-(swidth/2-figs.position().x)/100;
     position(newx,newy,position().z); 
-    stone.position(snewx,snewy>=newy?newy-3:(snewy<newy-6?newy-6:stone.position().y),snewz);  
+    stone.position(snewx,/*snewy>=newy?newy-3:((snewy<newy-6)?newy-6:*/snewy,snewz);  
     allset=1;
     }
     else if(Bdx.fingers.size()==1)
@@ -90,12 +115,13 @@ allset=-1;
     
     shot();
        stone_rem--;
-       if(stone_rem==0)
+       /*if(stone_rem==0)
        {
-       
-       
-       }
-       allset=0;
+      
+       allset=3;
+       return ;
+       }*/
+       allset=3;
 //  stone=stones[stone_rem-1];
     }
     

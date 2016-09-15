@@ -3,12 +3,12 @@ package com.arjunsuresh.gamesling;
 import com.nilunder.bdx.*;
 
 
-public class kavani1  extends kavani{
+public class kavani2  extends kavani{
  public void init()
  {
 super.init();
- setStone("kavani1","1stone","1target");
-setPlayer(((player)scene.objects.get("player1")));
+ setStone("kavani2","2stone","2target");
+setPlayer(((player)scene.objects.get("player2")));
  
  }
 
