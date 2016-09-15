@@ -12,7 +12,7 @@ public class Playbtn extends GameObject{
  public void init()
  {
 com.badlogic.gdx.audio.Music  m=Bdx.music.get("lantern");
-m.isLooping(true);
+m.setLooping(true);
 m.play();
  
  }

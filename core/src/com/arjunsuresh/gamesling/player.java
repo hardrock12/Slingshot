@@ -19,8 +19,10 @@ GameObject[] bots;
  String kavani_str;
  String levelname;
 String scoretxt;
+
  void setstonestring(String str,String bo,String stonestr,String level,String sco){
  scoretxt=sco;
+
  levelname=level;
 ((Text) scene.objects.get(scoretxt)).text("Score:00000");
 
@@ -65,7 +67,8 @@ bots=new GameObject[3];
     //((Text)scene.objects.get("debu")).position(new Vector3f(0,5,0));
     //((Text)scene.objects.get("debu")).text("Scored");
     
-    score+=(10f/time);
+    score+=(1000f/time);
+    time=0;
     ((Text)scene.objects.get(scoretxt)).text(String.valueOf("Score:"+score));
     }
     

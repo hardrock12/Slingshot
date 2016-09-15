@@ -27,6 +27,7 @@ m.play();
         if(rh!=null&&rh.object==scene.objects.get("Playbtn"))
       {  
         Bdx.sounds.get("menuselect").play();
+        scene.objects.get("loading1").position(scene.objects.get("loadingmarker").position());
         //((debug) scene.objects.get("debug")).text("hit play");
         Bdx.scenes.set(0,"Levels");
         
