@@ -23,7 +23,7 @@ public class select extends GameObject{
          Bdx.sounds.get("menuselect").play();
        // ((debug) scene.objects.get("debug")).text("hit play");
        scene.objects.get("loading2").position(scene.objects.get("loadingmarker1").position());
-        Bdx.scenes.set(0,"Level1");
+Bdx.scenes.set(0,"Level1");
         
         }
          else  if(rh.object==scene.objects.get("medium"))
@@ -31,13 +31,13 @@ public class select extends GameObject{
        Bdx.sounds.get("menuselect").play();
               
               scene.objects.get("loading2").position(scene.objects.get("loadingmarker1").position());
-              Bdx.scenes.set(0,"Level2");
+               Bdx.scenes.set(0,"Level2");
         }  else if(rh.object==scene.objects.get("hard"))
       {  
        Bdx.sounds.get("menuselect").play();
        
        scene.objects.get("loading2").position(scene.objects.get("loadingmarker1").position());
-       Bdx.scenes.set(0,"Level3");
+     Bdx.scenes.set(0,"Level3");
         }
            }
     }

@@ -12,10 +12,10 @@ public class iLevel3 extends Instantiator {
 			return new com.arjunsuresh.gamesling.player3();
 		if (gobj.get("class").asString().equals("stand1"))
 			return new com.arjunsuresh.gamesling.stand1();
-		if (gobj.get("class").asString().equals("bottlemanager1"))
-			return new com.arjunsuresh.gamesling.bottlemanager1();
 		if (gobj.get("class").asString().equals("kavani3"))
 			return new com.arjunsuresh.gamesling.kavani3();
+		if (gobj.get("class").asString().equals("bottlemanager1"))
+			return new com.arjunsuresh.gamesling.bottlemanager1();
 
 		return super.newObject(gobj);
 	}

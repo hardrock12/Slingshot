@@ -17,6 +17,7 @@ GameObject replay,menu;
 ((Text)scene.objects.get("scotxt")).text("SCORE:"+score);
 replay=scene.objects.get("menu1") ;
 menu=scene.objects.get("menu2");
+
  }
  
     public void main(){
@@ -28,13 +29,16 @@ menu=scene.objects.get("menu2");
         
         if(rh!=null){
         if(rh.object==replay)
-      {  
-        ((Text)scene.objects.get("scotxt")).text("SCsadORE:"+score);
-        Bdx.scenes.set(0,level);
+      {   Bdx.sounds.get("menuselect").play();
+     
         
+   Bdx.scenes.set(0,level).end();
+        
+   
         }
          else  if(rh.object==menu)
       {  
+       Bdx.sounds.get("menuselect").play();
        Bdx.scenes.set(0,"Levels");
         } 
            }

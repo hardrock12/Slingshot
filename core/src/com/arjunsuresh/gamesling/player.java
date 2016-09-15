@@ -37,7 +37,7 @@ bots=new GameObject[3];
  
  
  }
- int time=0;
+ int time=1;
  int tick=0;
     public void main(){
     tick++;
@@ -59,7 +59,8 @@ bots=new GameObject[3];
     
     gameoverscene.score=String.valueOf(score);
     gameoverscene.level=levelname;
-    Bdx.scenes.set(0,"gameover");
+
+   Bdx.scenes.set(0,"gameover");
     
     }
     public void notify_collsion()
@@ -67,8 +68,8 @@ bots=new GameObject[3];
     //((Text)scene.objects.get("debu")).position(new Vector3f(0,5,0));
     //((Text)scene.objects.get("debu")).text("Scored");
     
-    score+=(1000f/time);
-    time=0;
+    score+=(1200f/time);
+    time=1;
     ((Text)scene.objects.get(scoretxt)).text(String.valueOf("Score:"+score));
     }
     

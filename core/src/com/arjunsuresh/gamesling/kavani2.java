@@ -7,7 +7,7 @@ public class kavani2  extends kavani{
  public void init()
  {
 super.init();
- setStone("kavani2","2stone","2target");
+ setStone("kavani2","2stone","2target","Camera.004");
 setPlayer(((player)scene.objects.get("player2")));
  
  }

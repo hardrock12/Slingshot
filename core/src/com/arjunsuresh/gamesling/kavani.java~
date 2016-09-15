@@ -15,6 +15,8 @@ float swidth,sheight;
 int allset=0;
 int nstone;
 int stone_rem=3;
+Matrix3f cameraprev;
+    Vector3f camerapos;
 GameObject[] stones;
 
     int i=0;
@@ -46,11 +48,15 @@ allset=-1;
  
  
  }
-  public  void setStone(String kavanistr,String  stonestr,String target)
+ GameObject camerastr;
+  public  void setStone(String kavanistr,String  stonestr,String target,String camera)
     {
+    camerastr=scene.objects.get(camera);
+    
     stone=scene.objects.get(stonestr);  
    this.target=scene.objects.get(target);
     allset=0;
+    
     }
     private player pthis;
     void setPlayer(player p)
@@ -68,7 +74,7 @@ allset=-1;
     if(allset==3)
     {
 //((Text)scene.objects.get("debu")).text(" "+stone.position().y);
-    if(stone.position().y>28f||stone.position().x>15f||stone.position().z>17f||stone.position().x<-15f||stone.position().z<-4f||stone.position().y<-28f||stone.velocity()==new Vector3f(0,0,0))
+    if(stone.position().y>28f||stone.position().x>15f||stone.position().z>17f||stone.position().x<-15f||stone.position().z<-4f||stone.position().y<-5f||stone.velocity().length()<0.5f)
     {
     if(stone_rem==0)
     {
@@ -76,6 +82,9 @@ allset=-1;
      return;
     
     }
+    camerastr.position(camerapos);
+    camerastr.orientation(cameraprev);
+   // camerastr.orientation(Playbtn.ori);
     stone.velocity(new Vector3f(0,0,0));
     
     stone.angularVelocity(new Vector3f(0,0,0));
@@ -104,15 +113,19 @@ allset=-1;
     allset=1;
     }
     else if(Bdx.fingers.size()==1)
-    { if(allset==1){allset=2;}
+        { if(allset==1){allset=2;}
         Finger figs=Bdx.fingers.get(0);
     position((cx+(figs.position().x-swidth/2)/100),cy+(figs.position().y/100),position().z); 
  
     
     }
+    
     if(allset==2)
     {
-    
+    camerapos=camerastr.position();
+    cameraprev=camerastr.orientation();
+    camerastr.position(Playbtn.pos);
+    camerastr.orientation(Playbtn.ori);
     shot();
        stone_rem--;
        /*if(stone_rem==0)

@@ -8,14 +8,14 @@ public class iLevel1 extends Instantiator {
 	public GameObject newObject(JsonValue gobj){
 		String name = gobj.name;
 
-		if (gobj.get("class").asString().equals("player1"))
-			return new com.arjunsuresh.gamesling.player1();
 		if (gobj.get("class").asString().equals("kavani1"))
 			return new com.arjunsuresh.gamesling.kavani1();
-		if (gobj.get("class").asString().equals("Platform"))
-			return new com.arjunsuresh.gamesling.Platform();
+		if (gobj.get("class").asString().equals("player1"))
+			return new com.arjunsuresh.gamesling.player1();
 		if (gobj.get("class").asString().equals("bottle1"))
 			return new com.arjunsuresh.gamesling.bottle1();
+		if (gobj.get("class").asString().equals("Platform"))
+			return new com.arjunsuresh.gamesling.Platform();
 
 		return super.newObject(gobj);
 	}

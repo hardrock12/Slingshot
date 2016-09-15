@@ -3,7 +3,7 @@ package com.arjunsuresh.gamesling;
 import com.nilunder.bdx.*;
 
 
-public class kavani1  extends kavani{
+public class kavani2  extends kavani{
  public void init()
  {
 super.init();
